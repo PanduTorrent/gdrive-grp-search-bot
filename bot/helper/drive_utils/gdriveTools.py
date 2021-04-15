@@ -94,6 +94,7 @@ class GoogleDriveHelper:
     def drive_list(self, fileName):
         msg = ''
         INDEX = -1
+        frequency = 0
         content_count = 0
         add_title_msg = True
         for parent_id in DRIVE_ID :
@@ -122,6 +123,7 @@ class GoogleDriveHelper:
                             msg += f'<b>  | 📌   <a href="{url}">Index Link</a></b>'
                     msg += '<br><br>'
                     content_count += 1
+                    frequency += 1
                     if content_count == TELEGRAPHLIMIT :
                        self.telegraph_content.append(msg)
                        msg = ""
@@ -141,7 +143,7 @@ class GoogleDriveHelper:
         if self.num_of_path > 1:
             self.edit_telegraph()
 
-        msg = f"<b>Search Results For : </b> <code>{fileName}</code> 👇 "
+        msg = f"<b>Found {frequency} results for <code>{fileName}</code>.\nSearch Results are :- </b> 👇 "
         buttons = button_builder.ButtonMaker()   
         buttons.buildbutton("CLICK HERE", f"https://telegra.ph/{self.path[0]}")
 
