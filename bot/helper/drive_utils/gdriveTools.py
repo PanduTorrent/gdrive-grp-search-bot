@@ -133,7 +133,7 @@ class GoogleDriveHelper:
             self.telegraph_content.append(msg)
 
         if len(self.telegraph_content) == 0:
-            return "<b>No Result Found 😢</b>", None
+            return "<b>Found 0 results 😢, Now dont start Beating me up.</b>", None
 
         for content in self.telegraph_content :
             self.path.append(telegra_ph.create_page(title = 'GDriveMirror.   Made with love, from  🧁',
@@ -143,7 +143,7 @@ class GoogleDriveHelper:
         if self.num_of_path > 1:
             self.edit_telegraph()
 
-        msg = f"<b>Found {frequency} results for <code>{fileName}</code>.\nSearch Results are :- </b> 👇 "
+        msg = f"<b>Found {frequency} results for <code>{fileName}</code>.\nHere are the Search Results :- </b> 👇 "
         buttons = button_builder.ButtonMaker()   
         buttons.buildbutton("CLICK HERE", f"https://telegra.ph/{self.path[0]}")
 
