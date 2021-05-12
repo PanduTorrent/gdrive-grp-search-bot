@@ -87,7 +87,7 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next Page</a>  👉</b>'
                     nxt_page += 1
             telegra_ph.edit_page(path = self.path[prev_page],
-                                 title = 'GDriveMirror.   Made with love, from  🧁',
+                                 title = 'KickAss Torrents™',
                                  html_content=content)
         return
 
@@ -102,8 +102,7 @@ class GoogleDriveHelper:
             INDEX += 1          
             if response:
                 if add_title_msg == True:
-                    msg = f'<h4>Search Results for : {fileName}</h4><br><a href="https://t.me/GDriveMirror">Join Our Group @GDriveMirror</a><br>\n\n'\
-                          f'<a href="https://agamya.tk">Visit My Website</a><br><br>'
+                    msg = f'<h4>Search Results for : {fileName}</h4><br><a href="https://t.me/joinchat/z5z2rGVzz3JkMzcx">Join Our Group @MirrorUpdatesnNews</a><br>\n\n'
                     add_title_msg = False
                 msg += f"╾─────────────────────────────────────────────╼<br><b>{DRIVE_NAME[INDEX]}</b><br>╾─────────────────────────────────────────────╼<br>"
                 for file in response:
@@ -136,7 +135,7 @@ class GoogleDriveHelper:
             return "<b>Found 0 results 😢, Now dont start Beating me up.</b>", None
 
         for content in self.telegraph_content :
-            self.path.append(telegra_ph.create_page(title = 'GDriveMirror.   Made with love, from  🧁',
+            self.path.append(telegra_ph.create_page(title = 'KickAss Torrents',
                                                 html_content=content )['path'])
 
         self.num_of_path = len(self.path)      
