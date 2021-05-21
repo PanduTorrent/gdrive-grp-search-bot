@@ -1,7 +1,0 @@
-*.pyc
-downloads/*
-download/*
-data*
-.vscode
-.idea
-log.txt
